@@ -13,6 +13,25 @@ python = "^3.11"
 httpx = ">=0.15.0,<1.0.0"
 
 
+[tool.poetry.group.dev.dependencies]
+# doesn't use pytest at all
+# pytest = "8.1.1"  
+black = "^24.5.0" # different version than the one at root 
+
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# black configuration matches that at root level
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+    /(
+        \.ipynb_checkpoints  # Exclude Jupyter notebook checkpoints
+        | \.venv             # Exclude virtual environments
+        | .*\.ipynb          # Exclude Jupyter notebooks
+    )/
+'''
+target-version = ['py311']

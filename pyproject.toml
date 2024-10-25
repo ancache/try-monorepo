@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "myapp"
+name = "try-monorepo"
 version = "0.1.0"
 description = ""
 authors = ["Anca Chereches <anca.c@transitionzero.org>"]
@@ -7,9 +7,9 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-httpx = "^0.27.2"
-tz-api-utils = {path = "../../libraries/api-utils", develop = true}
-tz-processing-utils = {path = "../../libraries/processing-utils", develop = true}
+myapp = {path = "apps/myapp", develop = true}
+tz-api-utils = {path = "libraries/api-utils", develop = true}
+tz-processing-utils = {path = "libraries/processing-utils", develop = true}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.3"
@@ -19,10 +19,8 @@ black = "^24.10.0"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-# includes black but has changed some of its settings
 [tool.black]
-# line-length = 120
-line-length = 200
+line-length = 120
 include = '\.pyi?$'
 exclude = '''
     /(
@@ -31,4 +29,4 @@ exclude = '''
         | .*\.ipynb          # Exclude Jupyter notebooks
     )/
 '''
-# target-version = ['py311']
+target-version = ['py311']

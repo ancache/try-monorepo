@@ -183,6 +183,24 @@ files = [
 ]
 
 [[package]]
+name = "myapp"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = "^3.11"
+files = []
+develop = true
+
+[package.dependencies]
+httpx = "^0.27.2"
+tz-api-utils = {path = "../../libraries/api-utils", develop = true}
+tz-processing-utils = {path = "../../libraries/processing-utils", develop = true}
+
+[package.source]
+type = "directory"
+url = "apps/myapp"
+
+[[package]]
 name = "mypy-extensions"
 version = "1.0.0"
 description = "Type system extensions for programs checked with the mypy type checker."
@@ -474,7 +492,7 @@ httpx = ">=0.15.0,<1.0.0"
 
 [package.source]
 type = "directory"
-url = "../../libraries/api-utils"
+url = "libraries/api-utils"
 
 [[package]]
 name = "tz-processing-utils"
@@ -490,7 +508,7 @@ pandas = "^2.0.0"
 
 [package.source]
 type = "directory"
-url = "../../libraries/processing-utils"
+url = "libraries/processing-utils"
 
 [[package]]
 name = "tzdata"
@@ -506,4 +524,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "0dc443be70e102ca8d8722c23a749a1887723cb7e37e40e21ead5d56e0a6f8b8"
+content-hash = "acec08a2f694bf01ef72090c42d7e4c30802ff47a2151b0e5f0ea7482c3b45f1"

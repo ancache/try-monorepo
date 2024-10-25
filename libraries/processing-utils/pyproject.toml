@@ -12,7 +12,24 @@ packages = [
 python = "^3.11"
 pandas = "^2.0.0"
 
+# well-behaved library, does everything right
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.3"
+black = "^24.10.0"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# black configuration matches that at root level
+[tool.black]
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+    /(
+        \.ipynb_checkpoints  # Exclude Jupyter notebook checkpoints
+        | \.venv             # Exclude virtual environments
+        | .*\.ipynb          # Exclude Jupyter notebooks
+    )/
+'''
+target-version = ['py311']
