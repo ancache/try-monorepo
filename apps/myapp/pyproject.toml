@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "myapp"
+version = "0.1.0"
+description = ""
+authors = ["Anca Chereches <anca.c@transitionzero.org>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+httpx = "^0.27.2"
+tz-api-utils = {path = "../../libraries/api-utils", develop = true}
+tz-processing-utils = {path = "../../libraries/processing-utils", develop = true}
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

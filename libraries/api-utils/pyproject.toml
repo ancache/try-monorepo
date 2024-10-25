@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "tz-api-utils"
+version = "0.1.0"
+description = ""
+authors = ["Anca Chereches <anca.c@transitionzero.org>"]
+readme = "README.md"
+packages = [
+  { include = "tz" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+httpx = ">=0.15.0,<1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
